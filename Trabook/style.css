@@ -20,15 +20,13 @@ body {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: rgb(0, 0, 0);
+  background-color: #f7f6f6;
   color: white;
   cursor: pointer;
   padding: 15px;
   border-radius: 50%;
 }
-#myBtn:hover {
-  background-color: #555;
-}
+
 text{
   color: #fa7436;
 }
