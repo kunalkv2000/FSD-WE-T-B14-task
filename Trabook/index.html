@@ -17,7 +17,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
    </head>
    <body>
-      <img src="assets/images/brand/logo.png" onclick="topFunction()" id="myBtn" title="Go to top"/>
+      <img src="./assets/images/top.png" style="height: auto; width: 80px;" onclick="topFunction()" id="myBtn" title="Go to top"/>
       <nav>
          <!-- Checkbox for toggling menu -->
          <input type="checkbox" id="check">
@@ -339,5 +339,26 @@
             </div>
          </div>
       </footer>
+      <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
    </body>
 </html>
