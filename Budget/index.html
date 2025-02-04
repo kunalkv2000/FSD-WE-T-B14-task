@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Income & Expense Tracker - Home</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta http-equiv='cache-control' content='no-cache'>
+        <meta http-equiv='expires' content='0'>
+        <meta http-equiv='pragma' content='no-cache'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </head>
+    <body>
+        <br><br>
+        <div class="container mx-auto bg-white p-6 border-2 rounded-lg drop-shadow-2xl">
+            <h1 class="mb-4 text-2xl font-bold text-gray-900 md:text-3xl lg:text-6xl text-center">
+                <span class="text-blue-600">Income <span class="text-black"> & </span> Expense</span> 
+                <mark class="px-2 text-white bg-blue-600 rounded-lg">Tracker</mark>
+            </h1>
+            <p class="text-lg font-normal text-gray-500 lg:text-xl text-center">Expense management software tailored for the unique needs of your personal things.</p>
+
+            <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
+                <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+                  <!-- Heading & Filters -->
+                  <div class="mb-4 grid gap-2 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-3">
+                    <div class="grid grid-cols-2 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+                        <div class="w-auto">
+                          <a href="#">
+                            <img class="h-auto max-w-full rounded-lg" src="./assets/img/balance.png" alt="image description">
+                          </a>
+                        </div>
+                        <div class="w-auto">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Balance</h5>
+                            <p class="font-normal text-gray-700" id="balance">₹ 0.00</p>
+                        </div>
+                    </div>
+    
+                    <div class="grid grid-cols-2 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+                        <div class="w-auto">
+                          <a href="#">
+                            <img class="h-auto max-w-full rounded-lg" src="./assets/img/income.png" alt="image description">
+                          </a>
+                        </div>
+                        <div class="w-auto">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Income</h5>
+                            <p class="font-normal text-gray-700" id="total-income">₹ 0.00</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+                        <div class="w-auto">
+                          <a href="#">
+                            <img class="h-auto max-w-full rounded-lg" src="./assets/img/expense.png" alt="image description">
+                          </a>
+                        </div>
+                        <div class="w-auto">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Expense</h5>
+                            <p class="font-normal text-gray-700" id="total-expense">₹ 0.00</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+
+            <form class="max-w-md mx-auto" id="budget-form">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Enter Transaction</h5>
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" id="description" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Transaction for? (ex: Rent)</label>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="number" id="amount" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Amount</label>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <select id="type" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                </div>
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            </form>
+  
+
+            <br>
+            <!-- component -->
+            <section class="container px-4 mx-auto">
+              <div class="sm:flex sm:items-center sm:justify-between">
+                  <div>
+                      <div class="flex items-center gap-x-3">
+                          <h2 class="text-lg font-medium text-gray-800 dark:text-white">Your Transactions</h2>
+
+                          <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full">10 Transactions</span>
+                      </div>
+
+                      <p class="mt-1 text-sm text-gray-500">Please click on the below button respectievly to view the filtered content.</p>
+                  </div>
+              </div>
+
+              <div class="mt-6 md:flex md:items-center md:justify-between">
+                  <div class="inline-flex overflow-hidden bg-white border divide-x rounded-lg">
+                      <button class="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 bg-gray-100 sm:text-sm focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700" onclick="filterEntries('all')"> View all </button>
+
+                      <button class="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm hover:bg-gray-100 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700" onclick="filterEntries('income')"> Income </button>
+
+                      <button class="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm hover:bg-gray-100 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700" onclick="filterEntries('expense')"> Expense </button>
+                  </div>
+              </div>
+
+              <div class="flex flex-col mt-6">
+                  <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                      <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                          <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
+                              <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                  <thead class="bg-gray-50 dark:bg-gray-800">
+                                      <tr>
+                                          <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-center"> Transaction Made For </th>
+ 
+                                          <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-center"> Transaction Amount </th>
+
+                                          <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-center"> Transaction Type </th>
+
+                                          <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400 text-center"> Action (Edit / Delete) </th>
+                                      </tr>
+                                  </thead>
+                                  <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900" id="budget-entries">
+                                      <tr>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </section>
+        </div>    
+        <script src="./script.js"></script>
+    </body>
+</html>
