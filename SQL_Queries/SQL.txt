@@ -1,3 +1,67 @@
+-------- Database Creating Query -----------
+
+create database ecommerce ;
+
+-------- Indicates which Database is going to use -----------
+
+use ecommerce;
+
+-------- customer table -----------
+
+create table customers (
+id int NOT NULL AUTO_INCREMENT,
+name varchar(20),
+email varchar(30),
+address varchar(250),
+PRIMARY KEY (id	)
+);
+
+insert into customers (name, email, addresss) values
+('Kunal','kunal@sample.com','Chennai'),
+('Kanna','kanna@sample.com','Vellore'),
+('Kamal','kamal@sample.com','coimbatore'),
+('Raj','raj@sample.com','trichy'),
+('Hamdan','hamdan@sample.com','Chennai'),
+('Roshan','roshan@sample.com','Chennai'),
+('Refay','refay@sample.com','Chennai')
+
+-------- order table -----------
+
+create table orders (
+id int NOT NULL AUTO_INCREMENT,
+customer_id int,
+order_date date,
+total_amount int,
+PRIMARY KEY (id	),
+FOREIGN KEY (customer_id) REFERENCES customers(id)
+);
+
+insert into orders (customer_id, order_date, total_amount) values
+(1 ,'2025-06-15', 5000),
+(2 ,'2025-07-01', 1000),
+(3 ,'2025-07-20', 500),
+(4 ,'2025-07-35', 3000),
+(5 ,'2025-08-15', 2000),
+(6 ,'2025-09-01', 10000),
+(7 ,'2025-08-30', 3500)
+
+-------- product table -----------
+
+create table products (
+id int NOT NULL AUTO_INCREMENT,
+prod_name varchar(30),
+price int,
+prod_description varchar(300),
+PRIMARY KEY (id)
+);
+
+insert into products (prod_name, price, prod_description) values
+('Product A', 400, 'Product A refers to a product which is highly demanding.'),
+('Product B', 300, 'Product B refers to a product which is moderatly demanding.'),
+('Product C', 100, 'Product C refers to a product which is low demanding.')
+
+--------- Solutions -------------
+
 1)	select * from customers where order_date between (SELECT dateadd(dd,-30,cast(getdate() as date))) and (SELECT CAST( GETDATE() AS Date ));
 
 2)	select b.name as customer, sum(total_amount) from orders a left join customers b on a.customer_id = b.id group by b.name;
