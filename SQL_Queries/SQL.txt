@@ -49,9 +49,9 @@ insert into orders (customer_id, order_date, total_amount) values
 
 create table products (
 id int NOT NULL AUTO_INCREMENT,
-prod_name varchar(30),
+name varchar(30),
 price int,
-prod_description varchar(300),
+description varchar(300),
 PRIMARY KEY (id)
 );
 
